@@ -2,11 +2,7 @@ package br.com.senac.api.controllers;
 
 
 import br.com.senac.api.controllers.dtos.PessoaRequestDTO;
-import br.com.senac.api.controllers.dtos.PessoaRequestDTO;
 import br.com.senac.api.entidades.Pessoa;
-import br.com.senac.api.entidades.Pessoa;
-import br.com.senac.api.entidades.Pessoa;
-import br.com.senac.api.services.PessoaService;
 import br.com.senac.api.services.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +36,9 @@ public class PessoaController {
         }
     }
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<Pessoa> atualizar (@PathVariable long id, @RequestBody PessoaRequestDTO pessoa){
+    public ResponseEntity<Pessoa> atualizar (
+            @PathVariable long id,
+            @RequestBody PessoaRequestDTO pessoa){
         try{
             return ResponseEntity.ok(pessoaService.atualizar(id, pessoa));
 
@@ -49,8 +47,17 @@ public class PessoaController {
 
         }
 
+    }
+    @DeleteMapping("/deletar/{id}")
+    public  ResponseEntity<Void> deletar(@PathVariable Long id){
+        try {
+            pessoaService.deletar(id);
+            return ResponseEntity.ok(null);
 
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(null);
 
+        }
     }
 
 

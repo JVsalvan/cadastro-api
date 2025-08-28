@@ -1,10 +1,7 @@
 package br.com.senac.api.controllers;
 
 import br.com.senac.api.controllers.dtos.ProdutoRequestDTO;
-import br.com.senac.api.controllers.dtos.ProdutoRequestDTO;
 import br.com.senac.api.entidades.Produto;
-import br.com.senac.api.entidades.Produto;
-import br.com.senac.api.services.ProdutoService;
 import br.com.senac.api.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
